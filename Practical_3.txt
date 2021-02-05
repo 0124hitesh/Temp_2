@@ -1,0 +1,39 @@
+Activity 1
+
+> db.stu.updateMany({name:"pankaj"},{$set:{name:"Pankaj"}})
+{ "acknowledged" : true, "matchedCount" : 2, "modifiedCount" : 2 }
+
+Activity 2
+
+db.stu.save({"_id" : ObjectId("60115eff2953ec0358b47b6b"),name:"Pankaj",lastName:"sharma",age:30,"averageScore" : 3.4,id:19,sec:"D",gender:"male"})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.stu.save({name:"Pankaj",lastName:"sharma"},{$set:{age:30}})
+
+WriteResult({ "nInserted" : 1 })
+
+Activity 3
+
+> db.stu.updateMany({},{$set:{address:{hno:null,city:"null",pincode:null,state:null}}})
+WriteResult({ "nMatched" : 20, "nUpserted" : 0, "nModified" : 20 })
+
+Activity 4
+
+> db.stu.updateMany({}, {$rename:{"averageScore":"Score"}})
+{ "acknowledged" : true, "matchedCount" : 21, "modifiedCount" : 20 }
+
+
+
+> db.stu.update({id:2},{$set:{address:{hno:2,city:"a2",pincode:22}}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+
+Activity 5
+> db.stu.updateMany({},{$unset:{"address.state":null}})
+{ "acknowledged" : true, "matchedCount" : 21, "modifiedCount" : 2 }
+
+Activity 6
+> db.stu.deleteOne({sec:"D"})
+{ "acknowledged" : true, "deletedCount" : 1 }
+
+Activity 7
+> db.stu.remove({age:{$gt:25}})
+WriteResult({ "nRemoved" : 2 })

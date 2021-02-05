@@ -1,0 +1,32 @@
+Activity - 2
+
+db.stu4.aggregate([
+	{ $match: {gender:"male"}},
+	{ $group: { _id:"$sec", count:{$sum:1}, names:{$push:"$name"}}},
+	{ $match: {_id:"B"}},
+	{ $project: { names:1, _id:0}}
+]).pretty()
+
+
+Activity - 3
+db.stu4.aggregate([
+	{$group: {_id:"$sec", avg:{$avg:"$averageScore"}}}
+]).pretty()
+
+
+Activity - 4
+db.stu4.aggregate([
+	{$match: { gender:"female"}},
+	{$group: { _id:"$sec", count:{$sum:1}}}
+])
+
+
+Activity - 5
+
+db.stu4.aggregate([
+	{$group: {_id:"$sec", count:{ $sum:1}}},
+	{ $limit:2}
+]).pretty()
+
+
+
