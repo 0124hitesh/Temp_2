@@ -1,1 +1,11 @@
+mongo export
 mongoexport --db Database_name --collection Collection_Name --out new_json.json
+
+mongo import
+mongoimport --db db1 --collection mongo_import --file e:\a.json
+
+mongo dump
+mongodump --db db1 --collection mongo_import --out e:\dump_backup_new
+
+mongo restore
+mongorestore --db db1 --collection mongo_import e:\dump_backup_new\db1\mongo_import.bson
