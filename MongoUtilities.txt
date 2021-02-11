@@ -9,3 +9,5 @@ mongodump --db db1 --collection mongo_import --out e:\dump_backup_new
 
 mongo restore
 mongorestore --db db1 --collection mongo_import e:\dump_backup_new\db1\mongo_import.bson
+
+nmp install mongoose

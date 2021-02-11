@@ -28,8 +28,9 @@ const db2=new db({
 })
 
 //db1.save().then(()=>console.log("saved")).catch(()=>console.log("error_unsaved"));
-db.insertMany([db1,db2])
-db.findByIdAndUpdate("6021134b87200b07a8535d86",{name:"Yogesh"}).then((doc)=>console.log(doc)).catch((err)=>console.log(err));
+//db.insertMany([db1,db2])
+db.find({}).then((doc)=>console.log(doc));
+db.findByIdAndUpdate('6025003559c3f7526487b37d',{name:"Yogesh"}).then((doc)=>console.log(doc)).catch((err)=>console.log(err));
 //db.findByIdAndDelete("6021134b87200b07a8535d86");
 
 console.log("end")
