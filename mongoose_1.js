@@ -33,3 +33,16 @@ db.findByIdAndUpdate("6021134b87200b07a8535d86",{name:"Yogesh"}).then((doc)=>con
 //db.findByIdAndDelete("6021134b87200b07a8535d86");
 
 console.log("end")
+
+// Data types in mongoose
+// String
+// Number
+// Date
+// Buffer
+// Boolean
+// Mixed
+// ObjectId
+// Array
+// Decimal128
+// Map
+// Schema
